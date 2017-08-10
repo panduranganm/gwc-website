@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  button {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-</style>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel = "stylesheet"  type = "text/css"  href = "style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+      $("button.graypic").click(function(){
+          $("img").css("filter", "grayscale(80%)");
+      });
+  });
+
+
+  </script>
+
 </head>
 <body>
 
-<h2>Button!</h2>
+<img id = "picture" src = "frog.jpg">
+<img id = "picture1" class=gray src="frog.jpg" alt="frog" width="300" height="300">
 
-<button onclick="window.location='http://www.google.com';">Go to Google</button>
+<div id= "buttonFilters">
+  <button class = "graypic"> grayscale </button>
+
+</div>
+
 
 </body>
 </html>
