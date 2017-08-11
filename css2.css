@@ -12,16 +12,33 @@ h1 {
   margin: 0px;
   padding-top: 0px;
 }
+#welcome{
+  background-color: white;
+  color: black;
+  border: 2px solid #FFCAE5;
+  font-family: cursive;
+  font-size: 20px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  -webkit-transition-duration: background-color 0.4s;
+  transition-duration: background-color 0.4s;
+}
+
+#welcome:hover{
+  background-color: #FFCAE5;
+  color: white;
+}
 
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #ffcae5;
 }
 
 /* Style the buttons inside the tab */
 div.tab button {
-    background-color: inherit;
+    background-color: #ffcae5;
+    color: #ffcae5
     float: left;
     border: none;
     outline: none;
