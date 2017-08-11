@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,74 +5,90 @@
   <link rel = "stylesheet"  type = "text/css"  href = "style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  //button functions
   <script>
-    //original
-    $(document).ready(function(){
-        $("button.orig").click(function(){
-            $("img").css("filter", "none");
-        });
-    });
+    //upload image
+      $(function () {
+        $(":file").change(function () {
+              if (this.files && this.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = imageIsLoaded;
+                  reader.readAsDataURL(this.files[0]);
+              }
+          });
+      });
+      function imageIsLoaded(e) {
+          $('#firstImg').attr('src', e.target.result);
+      };
 
-    //grayscale
-    $(document).ready(function(){
-        $("button.gray").click(function(){
-            $("img").css("filter", "grayscale(80%)");
-        });
-    });
+    //button filters
+      //original
+      $(document).ready(function(){
+          $("button.orig").click(function(){
+              $("img").css("filter", "none");
+          });
+      });
 
-    //blur
-    $(document).ready(function(){
-        $("button.blur").click(function(){
-            $("img").css("filter", "blur(5px)");
-        });
-    });
+      //grayscale
+      $(document).ready(function(){
+          $("button.gray").click(function(){
+              $("img").css("filter", "grayscale(80%)");
+          });
+      });
 
-    //brightness
-    $(document).ready(function(){
-        $("button.brighten").click(function(){
-            $("img").css("filter", "brightness(200%)");
-        });
-    });
+      //blur
+      $(document).ready(function(){
+          $("button.blur").click(function(){
+              $("img").css("filter", "blur(5px)");
+          });
+      });
 
-    //contrast
-    $(document).ready(function(){
-        $("button.contrast").click(function(){
-            $("img").css("filter", "contrast(200%)");
-        });
-    });
+      //brightness
+      $(document).ready(function(){
+          $("button.brighten").click(function(){
+              $("img").css("filter", "brightness(200%)");
+          });
+      });
 
-    //hue-rotate
-    $(document).ready(function(){
-        $("button.huerot").click(function(){
-            $("img").css("filter", "hue-rotate(90deg)");
-        });
-    });
+      //contrast
+      $(document).ready(function(){
+          $("button.contrast").click(function(){
+              $("img").css("filter", "contrast(200%)");
+          });
+      });
 
-    //invert
-    $(document).ready(function(){
-        $("button.invert").click(function(){
-            $("img").css("filter", "invert(100%)");
-        });
-    });
+      //hue-rotate
+      $(document).ready(function(){
+          $("button.huerot").click(function(){
+              $("img").css("filter", "hue-rotate(90deg)");
+          });
+      });
+
+      //invert
+      $(document).ready(function(){
+          $("button.invert").click(function(){
+              $("img").css("filter", "invert(100%)");
+          });
+      });
 
   </script>
 
 </head>
 <body>
 
-<img id = "picture" src = "car.jpg">
+  <div>
+    <input type='file' accept="image/gif, image/jpeg, image/png"/>
+    <img class="uploaded" id="firstImg" src="#" alt="your image" />
+    <p></p>
 
-<div id= "buttonFilters">
-  <button class = "orig"> original </button>
-  <button class = "gray"> grayscale </button>
-  <button class = "blur"> blur </button>
-  <button class = "brighten"> brighten </button>
-  <button class = "contrast"> grayscale </button>
-  <button class = "huerot"> hue-rotate </button>
-  <button class = "invert"> invert </button>
-</div>
-
+  <div id= "buttonFilters">
+    <button class = "orig"> original </button>
+    <button class = "gray"> grayscale </button>
+    <button class = "blur"> blur </button>
+    <button class = "brighten"> brighten </button>
+    <button class = "contrast"> grayscale </button>
+    <button class = "huerot"> hue-rotate </button>
+    <button class = "invert"> invert </button>
+  </div>
 
 </body>
 </html>
