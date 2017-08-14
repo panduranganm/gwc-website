@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel = "stylesheet"  type = "text/css"  href = "style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
         body {font-family: "Lato", sans-serif;}
@@ -53,12 +56,71 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
-
         @keyframes fadeEffect {
             from {opacity: 0;}
             to {opacity: 1;}
         }
-    </style>
+      </style>
+
+    <script>
+      //upload image
+        $(function () {
+          $(":file").change(function () {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = imageIsLoaded;
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+        function imageIsLoaded(e) {
+            $('#firstImg').attr('src', e.target.result);
+        };
+      //button filters
+        //original
+        $(document).ready(function(){
+            $("button.orig").click(function(){
+                $("img").css("filter", "none");
+            });
+        });
+        //grayscale
+        $(document).ready(function(){
+            $("button.gray").click(function(){
+                $("img").css("filter", "grayscale(80%)");
+            });
+        });
+        //blur
+        $(document).ready(function(){
+            $("button.blur").click(function(){
+                $("img").css("filter", "blur(5px)");
+            });
+        });
+        //brightness
+        $(document).ready(function(){
+            $("button.brighten").click(function(){
+                $("img").css("filter", "brightness(200%)");
+            });
+        });
+        //contrast
+        $(document).ready(function(){
+            $("button.contrast").click(function(){
+                $("img").css("filter", "contrast(200%)");
+            });
+        });
+        //hue-rotate
+        $(document).ready(function(){
+            $("button.huerot").click(function(){
+                $("img").css("filter", "hue-rotate(90deg)");
+            });
+        });
+        //invert
+        $(document).ready(function(){
+            $("button.invert").click(function(){
+                $("img").css("filter", "invert(100%)");
+            });
+        });
+    </script>
+
 </head>
 <body>
 
@@ -78,6 +140,23 @@
     <div id="Edit" class="tabcontent">
       <h3>Edit Your Pix</h3>
       <p> Learn how to edit your own pictues and make them your own!</p>
+      <div id= "buttonFilters">
+        <button class = "orig"> original </button>
+        <button class = "gray"> grayscale </button>
+        <button class = "blur"> blur </button>
+        <button class = "brighten"> brighten </button>
+        <button class = "contrast"> grayscale </button>
+        <button class = "huerot"> hue-rotate </button>
+        <button class = "invert"> invert </button>
+      </div>
+
+      <div>
+        <p></p>
+        <input type='file' accept="image/gif, image/jpeg, image/png"/>
+        <img class="uploaded" id="firstImg" src="#" alt="your image" />
+        <p></p>
+      </div>
+
     </div>
 
     <div id="Tips" class="tabcontent">
