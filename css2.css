@@ -1,67 +1,40 @@
 /* Style the tab */
 
-#PIX{
-  width: 1000px;
-  float: left;
-  padding-top: 0px;
-  margin-top: 0;
-  margin-left: 0;
-  text-align: left;
-}
-h1 {
-  margin: 0px;
-  padding-top: 0px;
-}
-#welcome{
-  background-color: white;
-  color: black;
-  border: 2px solid #FFCAE5;
-  font-family: cursive;
-  font-size: 20px;
-  padding: 12px 28px;
-  border-radius: 8px;
-  -webkit-transition-duration: background-color 0.4s;
-  transition-duration: background-color 0.4s;
-}
 
-#welcome:hover{
-  background-color: #FFCAE5;
-  color: white;
-}
+
 
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #ffcae5;
+    background-color: #b1aea8;
 }
 
 /* Style the buttons inside the tab */
 div.tab button {
-    background-color: #ffcae5;
-    color: #ffcae5
+    background-color: #b1aea8;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 0px;
+    padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
-    background-color: #ddd;
+    background-color: #ffcae5;
 }
 
 /* Create an active/current tablink class */
 div.tab button.active {
-    background-color: #ccc;
+    background-color: #ffe0f1;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 0px;
+    padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
 }
