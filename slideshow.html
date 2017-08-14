@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s;
+}
+.container:hover .overlay {
+  opacity: 1;
+}
+#LArrow {
+  position:absolute;
+  left:1160px;
+  top:400px;
+}
+</style>
+
+<body>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-content w3-display-container">
+
+  <div class="container mySlides">
+    <img src="liza.jpg" alt="Avatar" class="image" style="width:1200px;height:800px;">
+    <div class="overlay">
+      <div class="text"><img  src="lizatheme.png" alt="Avatar" class="image"style="width:1200px;height:800px;"></div>
+  </div>
+  </div>
+
+  <div class="container mySlides">
+
+    <img src="skraften.jpg" alt="Avatar" class="image" style="width:1200px;height:800px;">
+    <div class="overlay">
+      <div class="text"><img  src="skraftentheme.png"  alt="Avatar" class="image" style="width:1200px;height:800px;"></div>
+
+    </div>
+
+  </div>
+
+  <div class="container mySlides">
+
+    <img src="psoup.jpg" alt="Avatar" class="image" style="width:1200px;height:800px;">
+    <div class="overlay">
+      <div class="text"><img  src="psouptheme.png" alt="Avatar" class="image" style="width:1200px;height:800px;"></div>
+
+    </div>
+
+  </div>
+
+  <div class="container mySlides">
+
+    <img src="megan.jpg" alt="Avatar" class="image" style="width:1200px;height:800px;">
+    <div class="overlay">
+      <div class="text"><img  src="megantheme.png" alt="Avatar" class="image" style="width:1200px;height:800px;"></div>
+    </div>
+  </div>
+    <div class="container mySlides">
+      <img src="beard.jpg" alt="Avatar"  style="width:1200px;height:800px;" class="image">
+      <div class="overlay">
+        <div class="text"><img  src="beardtheme.png"  alt="Avatar" style="width:1200px;height:800px;" class="image"></div>
+      </div>
+    </div>
+
+
+  <button  class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+
+  <button id="LArrow" class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
+
+</body>
+</html>
