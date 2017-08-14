@@ -5,7 +5,7 @@
   <style>
 @font-face {
   font-family: MyCustomFont;
-  src:url("pixfinal.ttf");
+  src:url("cutepix.ttf");
 }
 @font-face {
   font-family: ArtisticWebsite;
@@ -14,20 +14,27 @@
 }
 /*background image*/
   body {
-    background-image: url("brick2.jpg");
-    background-repeat: repeat;
+    background-image: url("wood.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   #title {
     font-family: MyCustomFont;
-    font-size: 250px;
+    font-size: 225px;
     color: black;
+    position:absolute;
+    left: 635px;
   }
 
 #artistic{
   font-family: ArtisticWebsite;
   font-size: 75px;
   color: black;
+  margin-right: 700px;
+  position: absolute;
+  width: 500px;
+  bottom: 85px;
 }
 
 /*#welcome{
@@ -47,7 +54,6 @@
 }*/
 #welcome {
     background-color: black;
-    border: none;
     color: white;
     padding: 16px 32px;
     text-align: center;
@@ -58,12 +64,8 @@
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-}
-
-#welcome {
-    background-color: black;
-    color: white;
-    border: 2px solid white;
+    border: 2px  solid white;
+    left: 35px;
 }
 
 #welcome:hover {
@@ -86,7 +88,7 @@
 
 <body>
   <script src="script2.js"></script>
-  <h1 id= "title" style="text-align:center;">PIX</h1>
+  <h1 id= "title" style="text-align:center;">Pix</h1>
 
 
   <div class="hero-image">
@@ -115,10 +117,12 @@
   .hero-text {
     text-align: center;
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    top: 500px;
   }
 
   /*.hero-text button {
@@ -141,3 +145,4 @@
 
 </body>
 </html>
+
