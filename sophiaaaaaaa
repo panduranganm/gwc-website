@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel = "stylesheet"  type = "text/css"  href = "style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+
+        body {font-family: "pagetext", sans-serif;}
+
+        /* Style the tab */
+        div.tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        div.tab button {
+            background-color: #f1f1f1;
+            float: right;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 30px;
+            font-family: tabs;
+        }
+
+        #pixnavbar{
+          font-family: tabs;
+          font-size: 30px;
+          float: left;
+          background-color: #f1f1f1;
+
+        }
+
+        /* Change background color of buttons on hover */
+        div.tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        div.tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+
+        }
+
+        /* Fade in tabs */
+        @-webkit-keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @font-face {
+          font-family: NavBar;
+          src:url("navbarfont.ttf");
+        }
+
+        @font-face {
+          font-family: tabs;
+          src:url("tabs.ttf");
+        }
+
+        @font-face {
+          font-family: pagetext;
+          src:url("informationfont.ttf");
+        }
+
+
+        h1 {
+         font-family: NavBar;
+         font-size: 100px;
+       }
+
+       h4{
+         font-family: pagetext;
+         font-size: 150px;
+       }
+
+       p1 {
+         font-family: pagetext;
+         font-size: 40px;
+       }
+
+       p{
+         font-family: pagetext;
+         font-size: 30px;
+       }
+
+       h {
+         font-family: pagetext;
+         font-size: 60px;
+         font-weight: bold;
+       }
+
+       div.buttonFilters button {
+         background-color: black;
+         color: white;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin: 4px 2px;
+         -webkit-transition-duration: 0.4s; /* Safari */
+         transition-duration: 0.4s;
+         cursor: pointer;
+         border: 2px  solid white;
+         width: 150px;
+         left: 35px;
+         font-family: pagetext;
+         font-size: 40px;
+         -webkit-animation: fadeEffect 1s;
+         animation: fadeEffect 1s;
+         display: block; /* Make the buttons appear below each other */
+
+     }
+
+       div.buttonFilters button:hover {
+           background-color: #D4C7CE;
+           color: black;
+           border: 2px solid black
+       }
+
+      /*picture overlay CSS*/
+       .container {
+         position: relative;
+         width: 50%;
+         height:50%;
+       }
+
+       .image {
+         display: block;
+         width: 100%;
+         height: auto;
+       }
+
+       .overlay {
+         position: absolute;
+         bottom: 100%;
+         left: 0;
+         right: 0;
+         background-color: #008CBA;
+         overflow: hidden;
+         width: 100%;
+         height:0;
+         transition: .5s ease;
+       }
+
+       .container:hover .overlay {
+         bottom: 0;
+         height: 100%;
+       }
+
+       .text {
+         word-wrap: break-word;
+         color: white;
+         font-size: 20px;
+         position: absolute;
+         overflow: hidden;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+       }
+
+      .btn-group button:not(:last-child) {
+          border-bottom: none; /* Prevent double borders */
+      }
+
+      #browse{
+        height: 60px;
+        font-size: 40px;
+        position: absolute;
+        float: center;
+        }
+
+      #browsebar{
+        text-align: center;
+        float: center;
+      }
+    </style>
+
+    <script>
+      //upload image
+        $(function () {
+          $(":file").change(function () {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = imageIsLoaded;
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+        function imageIsLoaded(e) {
+            $('#firstImg').attr('src', e.target.result);
+        };
+      //button filters
+        //original
+        $(document).ready(function(){
+            $("button.orig").click(function(){
+                $("img").css("filter", "none");
+            });
+        });
+        //grayscale
+        $(document).ready(function(){
+            $("button.gray").click(function(){
+                $("img").css("filter", "grayscale(80%)");
+            });
+        });
+        //blur
+        $(document).ready(function(){
+            $("button.blur").click(function(){
+                $("img").css("filter", "blur(5px)");
+            });
+        });
+        //brightness
+        $(document).ready(function(){
+            $("button.brighten").click(function(){
+                $("img").css("filter", "brightness(200%)");
+            });
+        });
+        //contrast
+        $(document).ready(function(){
+            $("button.contrast").click(function(){
+                $("img").css("filter", "contrast(200%)");
+            });
+        });
+        //hue-rotate
+        $(document).ready(function(){
+            $("button.huerot").click(function(){
+                $("img").css("filter", "hue-rotate(90deg)");
+            });
+        });
+        //invert
+        $(document).ready(function(){
+            $("button.invert").click(function(){
+                $("img").css("filter", "invert(100%)");
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Creators')">Creators</button>
+      <button class="tablinks" onclick="openCity(event, 'Tips')">Tips and Tricks</button>
+      <button class="tablinks" onclick="openCity(event, 'Edit')">Edit Your Pix</button>
+      <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+      <button id=pixnavbar font-family="tabs" float= "left">PIX</button>
+    </div>
+
+    <div id="Home" class="tabcontent">
+      <h4><b><center>Welcome to Pix!</center></b></h4>
+      <p1><center>Take your instagram to the next level by using our editing tools to find your aesthetic.</center></p1>
+    </div>
+
+    <div id="Edit" class="tabcontent">
+      <h><b><center>Learn how to edit your pictures using our filter tools!</center></b></h>
+      <p1><center>Edit by simply downloading your picture, clicking the browse button, and choosing your favorite filter!</center></p1>
+      <div>
+        <p></p>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2">
+              <div class= "buttonFilters">
+                <button class = "orig"> original </button>
+                <button class = "gray"> grayscale </button>
+                <button class = "blur"> blur </button>
+                <button class = "brighten"> brighten </button>
+                <button class = "contrast"> contrast </button>
+                <button class = "huerot"> hue-rotate </button>
+                <button class = "invert"> invert </button>
+              </div>
+            </div>
+            <div class="col-sm-10">
+              <div id="browsebar">
+                <input id="browse" type='file' accept="image/gif, image/jpeg, image/png"/>
+                <img class="uploaded" id="firstImg" src="#" alt="your image" />
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+    <div id="Tips" class="tabcontent">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2">
+              <h>Taking Good Pictures</br></h>
+              <p1>Everyone wants to be able to take photos that look appealing.
+                There are many different aspects that go into taking a good photo, whether it is from a phone or a professional camera.
+                If you keep on reading, we will give you all the tips you need to be able to get the perfect photo you are looking for.</p1>
+            </div>
+                <div class="col-sm-2">
+              <h>Rule of Thirds</br></h>
+              <p1>The rule of thirds is key to taking a good photo. You need to be able to visualize a 3 by 3 grid on your screen so that there are 9 parts.
+                  If you place the focus of your image along the lines or on the intersection points, the photo looks more balanced and natural to the eyes of the
+                   viewer.</p1>
+            </div>
+            <div class="col-sm-2">
+              <h>Negative Space</br></h>
+              	<p1>Negative space is the space around the main subject of the image. Having negative space gives the viewer
+                 “breathing room” so that the image does not look too cluttered. It also allows the viewer’s eyes to focus better on the main focal point in the image.</p1>
+            </div>
+            <div class="col-sm-2">
+              <h>Background</br></h>
+              	<p1>When finding a background, you need to make sure that there is nothing that will divert the viewer’s attention from the main focus of your image.
+                Your background should usually be very simple, and shy away from distracting images. If there is no way to find a simple background,
+                you can always blur out the background, so that the clarity is only on the main focus of your image</p1>
+              </div>
+              <div class="col-sm-2">
+                <h>Lighting</br></h>
+              	<p1>Good lighting is very important in taking pictures. Whenever possible, go outside because the sun is the best lighting, but too much sunlight can wash out your subject. Be sure to remember that if the light source is behind the subject, you will only see a silhouette. Play around with the light to make sure that there are no shadows.
+                If you ever feel that you don’t have enough light, use flash.</p1>
+              </div>
+              <div class="col-sm-2"> </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div id="Creators" class="tabcontent">
+      <div class="container-fluid">
+      <div class="row">
+
+                <div class="container">
+                  <img src="yoonpic.jpg" alt="Avatar" class="image">
+                  <div class="overlay">
+                    <div class="text">
+                      <p>My name is Sophia Yoon, and I am a rising senior at Randolph High School.
+                      I enjoy listening to music, watching TV shows, and editing photos.
+                       Continuing with using my summers to explore my different options,
+                       I decided to join the summer program, Girls Who Code.
+                       I took a computer course at my school that sparked my interest in coding because I
+                       thought it was cool to see how I could combine my interest in photography with coding.
+                       This experience has been one of a kind, and I am so grateful to have met
+                       all the people from the program</p>
+                     </div>
+                  </div>
+                </div>
+
+        <div class="col-sm-3">
+          <h><b>Sophia Augustine</b></h>
+          <p>My name is Sophia Augustine and I am a rising junior at West Morris Mendham High School. I enjoy playing basketball, running cross country,
+            playing the piano and, of course, photography! I wanted to combine my passion of photography with my newly obtained
+          computer science skills; leading to the creation of our artistic website, Pix!</p>
+        </div>
+        <div class="col-sm-3">
+          <h><b>Saga Elsekhely</b></h>
+          <p>My name is Saga Elsekhely and I am a rising senior at Arthur L. Johnson High School.
+            At my high school I enjoy playing tennis and running track and field.
+            I joined Girls Who Code to explore my options for careers in the future.
+            This experience has been great and I learned so much and met amazing  girls who
+            made my summer even better.</p>
+        </div>
+        <div class="col-sm-3">
+          <h><b>Maya Pandurangan</b></h>
+          <p>My name is Maya Pandurangan. I am a rising senior at the Middlesex County Academy.
+            In the future, I plan to pursue a degree in computer science.
+            I decided to focus on my passion for photography and work with three other dedicated coders.</p>
+        </div>
+
+        </div>
+      </div>
+      </div>
+
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>
