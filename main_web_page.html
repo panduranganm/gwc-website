@@ -12,35 +12,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
-    .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s;
-}
-.container:hover .overlay {
-  opacity: 1;
-}
-#LArrow {
-  position:absolute;
-  left:875px;
-  top:225px;
-}
+
         body {font-family: "pagetext", sans-serif;}
+
         /* Style the tab */
         div.tab {
             overflow: hidden;
             border: 1px solid #ccc;
             background-color: #f1f1f1;
         }
+
         /* Style the buttons inside the tab */
         div.tab button {
-            background-color: #f1f1f1;
+            background-color: #ffcae5;
             float: right;
             border: none;
             outline: none;
@@ -50,27 +34,34 @@
             font-size: 20px;
             font-family: tabs;
         }
+
         #pixnavbar{
           font-family: tabs;
           font-size: 20px;
           float: left;
           background-color: #f1f1f1;
+
         }
+
         /* Change background color of buttons on hover */
         div.tab button:hover {
             background-color: #ddd;
         }
+
         /* Create an active/current tablink class */
         div.tab button.active {
             background-color: #ccc;
         }
+
         /* Style the tab content */
         .tabcontent {
             display: none;
             padding: 6px 12px;
             -webkit-animation: fadeEffect 1s;
             animation: fadeEffect 1s;
+
         }
+
         /* Fade in tabs */
         @-webkit-keyframes fadeEffect {
             from {opacity: 0;}
@@ -80,30 +71,44 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
+
         @font-face {
           font-family: NavBar;
           src:url("navbarfont.ttf");
         }
+
         @font-face {
           font-family: tabs;
           src:url("tabs.ttf");
         }
+
         @font-face {
           font-family: pagetext;
           src:url("informationfont.ttf");
         }
+
+
         h1 {
          font-family: NavBar;
-         font-size: 80px;
+         font-size: 100px;
        }
-       p {
+
+       p1 {
+         font-family: pagetext;
+         font-size: 40px;
+       }
+
+       p{
          font-family: pagetext;
          font-size: 30px;
        }
+
        h {
          font-family: pagetext;
-         font-size: 50px;
+         font-size: 60px;
+         font-weight: bold;
        }
+
        div.buttonFilters button {
          background-color: black;
          color: white;
@@ -115,18 +120,76 @@
          transition-duration: 0.4s;
          cursor: pointer;
          border: 2px  solid white;
+         width: 150px;
          left: 35px;
          font-family: pagetext;
          font-size: 40px;
          -webkit-animation: fadeEffect 1s;
          animation: fadeEffect 1s;
+          display: block; /* Make the buttons appear below each other */
+
      }
+
        div.buttonFilters button:hover {
            background-color: #D4C7CE;
            color: black;
            border: 2px solid black
        }
-      </style>
+
+/*picture overlay CSS*/
+       .container {
+         position: relative;
+         width: 50%;
+         height:50%;
+       }
+
+       .image {
+         display: block;
+         width: 100%;
+         height: auto;
+       }
+
+       .overlay {
+         position: absolute;
+         bottom: 100%;
+         left: 0;
+         right: 0;
+         background-color: #008CBA;
+         overflow: hidden;
+         width: 100%;
+         height:0;
+         transition: .5s ease;
+       }
+
+       .container:hover .overlay {
+         bottom: 0;
+         height: 100%;
+       }
+
+       .text {
+         word-wrap: break-word;
+         color: white;
+         font-size: 20px;
+         position: absolute;
+         overflow: hidden;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+       }
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+#browse{
+  width:400px;
+  height: 75px;
+font-size: 50px;
+position: absolute;
+}
+
+</style>
 
     <script>
       //upload image
@@ -200,85 +263,20 @@
     </div>
 
     <div id="Home" class="tabcontent">
-      <h><b>Welcome to Pix!</b></h>
-      <p>Take your instagram to the next level by using our editing tools to find your aesthetic.</p>
-      <title>W3.CSS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <body>
-
-  <div class="w3-content w3-display-container">
-
-    <div class="container mySlides">
-      <img src="liza.jpg" alt="Avatar" class="image" style="width:875px;height:500px;">
-      <div class="overlay">
-        <div class="text"><img  src="lizatheme.png" alt="Avatar" class="image"style="width:900px;height:500px;"></div>
-    </div>
-    </div>
-
-    <div class="container mySlides">
-
-      <img src="skraften.jpg" alt="Avatar" class="image" style="width:875px;height:500px;">
-      <div class="overlay">
-        <div class="text"><img  src="skraftentheme.png"  alt="Avatar" class="image" style="width:900px;height:500px;"></div>
-
-      </div>
-
-    </div>
-
-    <div class="container mySlides">
-
-      <img src="psoup.jpg" alt="Avatar" class="image" style="width:875px;height:500px;">
-      <div class="overlay">
-        <div class="text"><img  src="psouptheme.png" alt="Avatar" class="image" style="width:900px;height:500px;"></div>
-
-      </div>
-
-    </div>
-
-    <div class="container mySlides">
-
-      <img src="megan.jpg" alt="Avatar" class="image" style="width:875px;height:500px;">
-      <div class="overlay">
-        <div class="text"><img  src="megantheme.png" alt="Avatar" class="image" style="width:900px;height:525px;"></div>
-      </div>
-    </div>
-      <div class="container mySlides">
-        <img src="beard.jpg" alt="Avatar"  style="width:875px;height:500px;" class="image">
-        <div class="overlay">
-          <div class="text"><img  src="beardtheme.png"  alt="Avatar" style="width:900px;height:525px;" class="image"></div>
-        </div>
-      </div>
-
-
-    <button  class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-
-    <button id="LArrow" class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
-
-  </div>
-
-  <script>
-  var slideIndex = 1;
-  showDivs(slideIndex);
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
-  }
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
-  }
-  </script>
+      <h><b><center>Welcome to Pix!</center></b></h>
+      <p1>Take your instagram to the next level by using our editing tools to find your aesthetic.</p1>
     </div>
 
     <div id="Edit" class="tabcontent">
-      <h><b>Learn how to edit your pictures using our filter tools!</b></h>
-      <p>Edit by simply downloading your picture, clicking the browse button, and choosing your favorite filter!</p>
+      <h><b><center>Learn how to edit your pictures using our filter tools!</center></b></h>
+      <p1><center>Edit by simply downloading your picture, clicking the browse button, and choosing your favorite filter!</center></p1>
+      <div>
+        <p></p>
+        <input id="browse" type='file' accept="image/gif, image/jpeg, image/png"/>
+        <img class="uploaded" id="firstImg" src="#" alt="your image" />
+        <p></p>
+      </div>
+
       <div class= "buttonFilters">
         <button class = "orig"> original </button>
         <button class = "gray"> grayscale </button>
@@ -289,54 +287,65 @@
         <button class = "invert"> invert </button>
       </div>
 
-      <div>
-        <p></p>
-        <input type='file' accept="image/gif, image/jpeg, image/png"/>
-        <img class="uploaded" id="firstImg" src="#" alt="your image" />
-        <p></p>
-      </div>
-
     </div>
+
     <div id="Tips" class="tabcontent">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-3">
-              <h><b>Taking Good Pictures</b></h>
-              <p>Everyone wants to be able to take photos that look appealing.
+            <div class="col-sm-2">
+              <h>Taking Good Pictures</br></h>
+              <p1>Everyone wants to be able to take photos that look appealing.
                 There are many different aspects that go into taking a good photo, whether it is from a phone or a professional camera.
-                If you keep on reading, we will give you all the tips you need to be able to get the perfect photo you are looking for.</p>
+                If you keep on reading, we will give you all the tips you need to be able to get the perfect photo you are looking for.</p1>
             </div>
-            <div class="col-sm-3">
-              <h><b>Rule of Thirds</b><h>
-              	<p>The rule of thirds is key to taking a good photo. You need to be able to visualize a 3 by 3 grid on your screen so that there are 9 parts.
+                <div class="col-sm-2">
+              <h>Rule of Thirds</br></h>
+              <p1>The rule of thirds is key to taking a good photo. You need to be able to visualize a 3 by 3 grid on your screen so that there are 9 parts.
                   If you place the focus of your image along the lines or on the intersection points, the photo looks more balanced and natural to the eyes of the
-                   viewer.</p>
+                   viewer.</p1>
             </div>
-            <div class="col-sm-3">
-              <h><b>Negative Space</b></h>
-              	<p>Negative space is the space around the main subject of the image. Having negative space gives the viewer
-                 “breathing room” so that the image does not look too cluttered. It also allows the viewer’s eyes to focus better on the main focal point in the image.</p>
+            <div class="col-sm-2">
+              <h>Negative Space</br></h>
+              	<p1>Negative space is the space around the main subject of the image. Having negative space gives the viewer
+                 “breathing room” so that the image does not look too cluttered. It also allows the viewer’s eyes to focus better on the main focal point in the image.</p1>
             </div>
-            <div class="col-sm-3">
-              <h><b>Background</b></h>
-              	<p>When finding a background, you need to make sure that there is nothing that will divert the viewer’s attention from the main focus of your image.
+            <div class="col-sm-2">
+              <h>Background</br></h>
+              	<p1>When finding a background, you need to make sure that there is nothing that will divert the viewer’s attention from the main focus of your image.
                 Your background should usually be very simple, and shy away from distracting images. If there is no way to find a simple background,
-                you can always blur out the background, so that the clarity is only on the main focus of your image</p>
+                you can always blur out the background, so that the clarity is only on the main focus of your image</p1>
               </div>
-              <div class="col-sm-3"
-              <h><b>Lighting</b></h>
-              	<p>Good lighting is very important in taking pictures. Whenever possible, go outside because the sun is the best lighting, but too much sunlight can wash out your subject. Be sure to remember that if the light source is behind the subject, you will only see a silhouette. Play around with the light to make sure that there are no shadows.
-                If you ever feel that you don’t have enough light, use flash.</p>
+              <div class="col-sm-2">
+                <h>Lighting</br></h>
+              	<p1>Good lighting is very important in taking pictures. Whenever possible, go outside because the sun is the best lighting, but too much sunlight can wash out your subject. Be sure to remember that if the light source is behind the subject, you will only see a silhouette. Play around with the light to make sure that there are no shadows.
+                If you ever feel that you don’t have enough light, use flash.</p1>
               </div>
+              <div class="col-sm-2"> </div>
           </div>
         </div>
       </div>
 
 
     <div id="Creators" class="tabcontent">
-      <h>Creators</h>
       <div class="container-fluid">
       <div class="row">
+
+                <div class="container">
+                  <img src="yoonpic.jpg" alt="Avatar" class="image">
+                  <div class="overlay">
+                    <div class="text">
+                      <p>My name is Sophia Yoon, and I am a rising senior at Randolph High School.
+                      I enjoy listening to music, watching TV shows, and editing photos.
+                       Continuing with using my summers to explore my different options,
+                       I decided to join the summer program, Girls Who Code.
+                       I took a computer course at my school that sparked my interest in coding because I
+                       thought it was cool to see how I could combine my interest in photography with coding.
+                       This experience has been one of a kind, and I am so grateful to have met
+                       all the people from the program</p>
+                     </div>
+                  </div>
+                </div>
+
         <div class="col-sm-3">
           <h><b>Sophia Augustine</b></h>
           <p>My name is Sophia Augustine and I am a rising junior at West Morris Mendham High School.
@@ -357,17 +366,7 @@
             In the future, I plan to pursue a degree in computer science.
             I decided to focus on my passion for photography and work with three other dedicated coders.</p>
         </div>
-        <div class="col-sm-3">
-          <h>Sophia Yoon</h>
-          <p>My name is Sophia Yoon, and I am a rising senior at Randolph High School.
-            I enjoy listening to music, watching TV shows, and editing photos.
-             Continuing with using my summers to explore my different options,
-             I decided to join the summer program, Girls Who Code.
-             I took a computer course at my school that sparked my interest in coding because I
-             thought it was cool to see how I could combine my interest in photography with coding.
-             This experience has been one of a kind, and I am so grateful to have met
-             all the people from the program</p>
-          </div>
+
         </div>
       </div>
       </div>
