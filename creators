@@ -1,0 +1,153 @@
+/*picture overlay CSS*/
+       .container {
+
+         position: relative ;
+         float: right;
+         width: 25%;
+         height:25%;
+       }
+       .container1 {
+         position:relative;
+         margin: 0 auto;
+         align-self: center;
+         width: 50%;
+         height:50%;
+       }
+       .image {
+         float: right;
+         display:inline-block;
+         width:100%;
+         height:100%;
+
+       }
+       .image1 {
+         display: block;
+         align-self: center;
+         width:100%;
+         height:100%;
+
+       }
+       .overlay {
+         position: absolute;
+         bottom: 100%;
+         left: 0;
+         right: 0;
+         background-color: black;
+         overflow: hidden;
+         width: 100%;
+         height:0;
+         transition: .5s ease;
+       }
+
+       .container:hover .overlay {
+         bottom: 0;
+         height: 100%;}
+
+       .container1:hover .overlay {
+         bottom: 0;
+         height: 100%;
+       }
+       .text {
+         word-wrap: break-word;
+         color: white;
+         font-size: 12px;
+         position: absolute;
+         overflow: hidden;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+        }
+        .text1 {
+          word-wrap: break-word;
+          color: white;
+          font-size: 20px;
+          position: absolute;
+          overflow: hidden;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+         }
+        .p
+        {
+          align-self: center;
+        }
+
+      </style>
+      
+      <div id="Creators" class="tabcontent">
+
+
+
+      <div class="container-fluid">
+      <div class="row">
+
+
+        <div class="container1">
+          <img src="group.jpg"  alt="Avatar" class="image1"  >
+          <div class="overlay">
+            <div><center><h>About Us</h></center><p class="text1">
+              When we started the program, we all discovered that we had a passion for photography and photo editing.
+          When it was time to brainstorm ideas for the final project, we realized we could combine computer scieece with
+          anything, including photography. We wanted to display our love for photography and computer science onto a single screen.
+          Shortly thereafter, PIX was born!
+                </p></div>
+          </div>
+            </br>
+            </br>
+        </div>
+          <div class="container">
+            <img src="yoonpic.jpg"  alt="Avatar" class="image" align="right" >
+            <div class="overlay">
+              <div><center><h>Sophia Yoon</h></center><p class="text">My name is Sophia Yoon,
+                and I am a rising senior at Randolph High School. I’ve always had an interest in film and photography,for instance last summer, I got to work on a
+                 movie set in California and this summer I decided to join Girls Who Code. This
+                   experience has been unique, and I am grateful to have met all the girls from the program.
+                  </p></div>
+            </div>
+          </div>
+
+          <div class="container">
+                <img src="sagapic.jpg" alt="Avatar" class="image" align="right" >
+                <div class="overlay">
+                  <div><center><h>Saga Elsekhely</h></center><p  class="text">My name is Saga Elsekhely and I am a rising senior at Arthur L. Johnson High School.
+                    At my high school I enjoy playing tennis and running track and field.
+                    I joined Girls Who Code to explore my options for careers in the future.
+                    This experience has been great and I learned so much and met amazing  girls who
+                    made my summer even better.</p></div>
+                </div>
+              </div>
+
+          <div class="container">
+            <img src="sophiapic.jpg"  alt="Avatar" class="image"   >
+            <div class="overlay">
+              <div ><center><h>Sophia Augustine</h></center><p   class="text">My name is Sophia Augustine and I am a rising junior at West Morris Mendham High School. I enjoy playing basketball,
+                running cross country, playing piano and, of course, photography! I wanted to combine my passion of taking pictures with my newly obtained
+              computer science skills; leading to the creation of our artistic website, Pix.</p></div>
+            </div>
+          </div>
+
+          <div class="container">
+            <img src="mayapic.jpg"   alt="Avatar" class="image" >
+            <div class="overlay">
+              <div ><center><h>Maya Pandurangan</h></center><p  class="text">My name is Maya Pandurangan. I am a rising senior at the Middlesex County Academy.
+                In the future, I plan to pursue a degree in computer science.
+                I decided to focus on my passion for photography and work with three other dedicated coders.</p></div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      </div>
